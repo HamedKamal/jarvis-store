@@ -29,47 +29,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // Initialize with the 2 mock items from approved UI/UX when cart is empty
+  // Start with a clean empty cart on mount
   useEffect(() => {
-    const mockItems: CartItem[] = [
-      {
-        id: "var_stone_grey_hoodie",
-        product: {
-          id: "mock_hoodie",
-          handle: "architectural-hoodie",
-          title: "Architectural Hoodie",
-          price: 220,
-          description: "Organic cotton hoodie.",
-          featuredImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGm8lNusMWOna8Fm3NS09Fbp-yPz_t2rKnog5ohauMKhgveNc6Qy6mD04X4qSjxG4niAr5AF9HOhzINTwBEkSdsrSS1WFYk53YYxQd1RpafzweW2remcSWfEVWKfdgDSru_7B7Q0r207rSPbkIwAxDyAqXZtjhIgBpiInwJZqKE35TTaTp7F3qAsYEKvOD_6uT2grj7Cn8ohL24CHuUUv6YpzgA6jtOBLDxMWGkAo5odeSHH4lgFE2NKk3SL7jacjunIruxAU3Tho",
-          images: [],
-          options: [],
-          variants: [],
-          tags: []
-        },
-        variantTitle: "Stone Grey / M",
-        quantity: 1,
-        price: 220
-      },
-      {
-        id: "var_navy_trouser",
-        product: {
-          id: "mock_trouser",
-          handle: "tailored-cargo-trouser",
-          title: "Tailored Cargo Trouser",
-          price: 185,
-          description: "Navy Cargo Trouser.",
-          featuredImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHutMvK7OFzydG64gJyEaF4xmgwdVoOuYP7oAMVvS19DP-b5_lhmrLelLN1GtPmdmGR-YwQ7PPYLl2D5LmMTmWHcqK-xgeDrrZjfMgcYT7LRG7isq4SrRF8KyxVpVPcYqkWQNlL1OJn2bkOO4vcVZY1Rhjvm2GpcoTNF1GfbYnorLv4RcIq2tC5lq40HiOPF5Ryv06SeSypJHuL7uU0ZucHploiTZuA1S3YZPEpboqsbW3UxiiR17GqhYJbCDJFpSnAoiW6enEz0A",
-          images: [],
-          options: [],
-          variants: [],
-          tags: []
-        },
-        variantTitle: "Performance Navy / 32",
-        quantity: 1,
-        price: 185
-      }
-    ];
-    setCartItems(mockItems);
+    setCartItems([]);
   }, []);
 
   const addToCart = (product: Product, variantId: string, quantity = 1) => {
@@ -113,7 +75,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const cartSubtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const freeShippingThreshold = 450; // LE 450 or $450
+  const freeShippingThreshold = 1500; // LE 1500
 
   return (
     <CartContext.Provider value={{

@@ -35,16 +35,16 @@ const Header: React.FC = () => {
         className={`sticky top-0 w-full z-40 transition-all duration-300 ${
           isScrolled
             ? "py-3 mx-auto"
-            : "py-6 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10"
+            : "py-6 bg-[#0F1B2D] border-b border-white/10"
         }`}
         style={
           isScrolled
             ? {
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
-                background: "rgba(247,246,242,0.72)",
-                borderBottom: "1px solid rgba(255,255,255,0.35)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.06)",
+                background: "rgba(15, 27, 45, 0.72)",
+                borderBottom: "1px solid rgba(255,255,255,0.15)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
               }
             : {}
         }
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto relative">
           
           {/* Mobile Menu Icon (hidden on desktop) */}
-          <button aria-label="Menu" className="md:hidden text-primary p-2">
+          <button aria-label="Menu" className="md:hidden text-[#F7F6F2] p-2">
             <span className="material-symbols-outlined">menu</span>
           </button>
 
@@ -64,10 +64,10 @@ const Header: React.FC = () => {
                 <li key={link.url}>
                   <Link
                     href={link.url}
-                    className={`transition-colors duration-300 uppercase hover:text-primary ${
+                    className={`transition-colors duration-300 uppercase hover:text-[#F7F6F2] ${
                       isActive
-                        ? "text-primary border-b border-primary pb-1"
-                        : "text-on-surface-variant"
+                        ? "text-[#F7F6F2] border-b border-[#F7F6F2] pb-1"
+                        : "text-[#F7F6F2]/75"
                     }`}
                   >
                     {link.title}
@@ -80,13 +80,13 @@ const Header: React.FC = () => {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="font-display-md text-display-md font-bold tracking-tighter text-primary absolute left-1/2 -translate-x-1/2"
+            className="font-display-md text-display-md font-bold tracking-tighter text-[#F7F6F2] absolute left-1/2 -translate-x-1/2"
           >
             JARVIS
           </Link>
 
           {/* Trailing Icons */}
-          <div className="flex items-center gap-stack-sm md:gap-stack-md text-primary">
+          <div className="flex items-center gap-stack-sm md:gap-stack-md text-[#F7F6F2]">
             <button aria-label="search" className="p-2 hover:opacity-70 transition-opacity">
               <span className="material-symbols-outlined">search</span>
             </button>
@@ -106,7 +106,7 @@ const Header: React.FC = () => {
             >
               <span className="material-symbols-outlined">shopping_bag</span>
               {cartCount > 0 && (
-                <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+                <span className="absolute top-1 right-1 w-2 h-2 bg-[#C28a5c] rounded-full"></span>
               )}
             </button>
           </div>

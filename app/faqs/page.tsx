@@ -23,7 +23,7 @@ export default function FAQPage() {
       items: [
         {
           q: "Do you ship internationally?",
-          a: "Yes, we ship globally via DHL Express. Free shipping is automatically unlocked on all orders over LE 450 (or $450 equivalent). Duties and custom fees are calculated at checkout."
+          a: "Yes, we ship globally via DHL Express. Free shipping is automatically unlocked on all orders over LE 1500 (or $150 equivalent). Duties and custom fees are calculated at checkout."
         },
         {
           q: "How long does shipping take?",

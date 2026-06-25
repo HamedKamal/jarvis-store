@@ -8,6 +8,7 @@ interface AccordionProps {
   iconName: string;
   defaultOpen?: boolean;
   children: React.ReactNode;
+  iconColor?: string;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
@@ -15,6 +16,7 @@ const Accordion: React.FC<AccordionProps> = ({
   iconName,
   defaultOpen = false,
   children,
+  iconColor,
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -25,10 +27,10 @@ const Accordion: React.FC<AccordionProps> = ({
         className="w-full flex justify-between items-center py-4 font-label-caps text-label-caps text-primary uppercase text-left focus:outline-none"
       >
         <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-on-error-container">{iconName}</span>
+          <span className="material-symbols-outlined" style={{ color: iconColor }}>{iconName}</span>
           {title}
         </div>
-        <span className="material-symbols-outlined text-on-error-container">
+        <span className="material-symbols-outlined" style={{ color: iconColor }}>
           {isOpen ? "remove" : "add"}
         </span>
       </button>

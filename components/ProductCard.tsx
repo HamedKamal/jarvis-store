@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Product } from "@/data/dummyData";
@@ -20,6 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   variantImage,
 }) => {
   const { addToCart } = useCart();
+  const [isFavorite, setIsFavorite] = useState(false);
   const isAvailable =
     product.variants.some((v) => v.available) || product.variants.length === 0;
 
@@ -30,12 +31,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const displayImage = variantImage || product.featuredImage;
   const displayLabel = variantName || product.title;
 
-  const handleQuickAdd = (e: React.MouseEvent) => {
+  const handleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    // Add first available variant (or the product itself)
-    const firstAvailableVariant = product.variants.find((v) => v.available);
-    addToCart(product, firstAvailableVariant?.id || product.id, 1);
+    setIsFavorite(!isFavorite);
   };
 
   return (
@@ -60,6 +59,36 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         )}
 
+        {/* Action Buttons Overlay (Centered horizontally near the bottom, shows on hover) */}
+        <div className="absolute inset-x-0 bottom-8 flex justify-center items-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+          {/* Favorites Button */}
+          <button
+            onClick={handleFavorite}
+            className="w-12 h-12 rounded-full flex items-center justify-center bg-[#0F1B2D]/90 text-[#F7F6F2] hover:bg-[#C28a5c] transition-all duration-200 shadow-lg scale-90 group-hover:scale-100 hover:scale-105 pointer-events-auto"
+            aria-label="Add to favorites"
+          >
+            <span
+              className="material-symbols-outlined text-[20px] transition-colors"
+              style={{
+                color: isFavorite ? "#ba1a1a" : "#F7F6F2",
+                fontVariationSettings: isFavorite ? "'FILL' 1" : "'FILL' 0",
+              }}
+            >
+              favorite
+            </span>
+          </button>
+
+          {/* Quick View Button (Eye) */}
+          <div
+            className="w-12 h-12 rounded-full flex items-center justify-center bg-[#0F1B2D]/90 text-[#F7F6F2] hover:bg-[#C28a5c] transition-all duration-200 shadow-lg scale-90 group-hover:scale-100 hover:scale-105 pointer-events-auto"
+            aria-label="View product details"
+          >
+            <span className="material-symbols-outlined text-[20px] text-[#F7F6F2]">
+              visibility
+            </span>
+          </div>
+        </div>
+
         {/* Sold Out overlay */}
         {!isAvailable && (
           <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
@@ -76,25 +105,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
             >
               SOLD OUT
             </span>
-          </div>
-        )}
-
-        {/* Quick Add Overlay — slides up on hover */}
-        {isAvailable && (
-          <div className="absolute bottom-0 left-0 right-0 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-[250ms] ease-out px-3 pb-3 pointer-events-none group-hover:pointer-events-auto">
-            <button
-              onClick={handleQuickAdd}
-              className="w-full py-3 font-label-caps text-label-caps text-primary text-[11px] tracking-widest"
-              style={{
-                backdropFilter: "blur(20px)",
-                background: "rgba(255,255,255,0.75)",
-                border: "1px solid rgba(255,255,255,0.45)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
-                borderRadius: "14px",
-              }}
-            >
-              QUICK ADD
-            </button>
           </div>
         )}
 

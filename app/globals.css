@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -30,7 +37,7 @@
   --color-secondary-container: #D8DADF;
   --color-on-secondary-container: #1B1D22;
   
-  --color-tertiary: #B07A4F;
+  --color-tertiary: #C28a5c;
   --color-on-tertiary: #F7F6F2;
   --color-tertiary-container: #8F623E;
   --color-on-tertiary-container: #C28A5C;
@@ -57,9 +64,9 @@
   --spacing-stack-lg: 32px;
 
   /* Custom Font Families */
-  --font-chivo: 'Chivo', sans-serif;
+  --font-chivo: 'Satoshi', sans-serif;
   --font-satoshi: 'Satoshi', sans-serif;
-  --font-jetbrains: 'JetBrains Mono', monospace;
+  --font-jetbrains: 'Satoshi', sans-serif;
 }
 
 /* Custom utilities & resets mapping the typography specifications */

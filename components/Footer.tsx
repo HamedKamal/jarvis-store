@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
   );
 
   return (
-    <footer className="bg-surface-container-low border-t border-outline-variant/20 pt-16 pb-12 w-full mt-auto">
+    <footer className="bg-[#0F1B2D] border-t border-white/10 pt-16 pb-12 w-full mt-auto text-[#F7F6F2]">
       <div className="max-width-container px-margin-mobile md:px-margin-desktop">
         
         {/* Main Columns Grid */}
@@ -62,22 +62,22 @@ const Footer: React.FC = () => {
           
           {/* Column 1: JARVIS */}
           <div className="lg:col-span-3 flex flex-col gap-6">
-            <h3 className="font-label-caps text-label-caps text-primary tracking-wider font-bold">
+            <h3 className="font-label-caps text-label-caps text-[#F7F6F2] tracking-wider font-bold">
               JARVIS
             </h3>
             <ul className="flex flex-col gap-3 font-body-md text-body-md">
               <li>
-                <Link href="/about" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/about" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/partners" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/partners" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Partners
                 </Link>
               </li>
               <li>
-                <Link href="/products/ringer-tee" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/products/ringer-tee" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Shop Ringer Tee
                 </Link>
               </li>
@@ -86,37 +86,37 @@ const Footer: React.FC = () => {
 
           {/* Column 2: SUPPORT */}
           <div className="lg:col-span-3 flex flex-col gap-6">
-            <h3 className="font-label-caps text-label-caps text-primary tracking-wider font-bold">
+            <h3 className="font-label-caps text-label-caps text-[#F7F6F2] tracking-wider font-bold">
               SUPPORT
             </h3>
             <ul className="flex flex-col gap-3 font-body-md text-body-md">
               <li>
-                <Link href="/faqs" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/faqs" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   FAQ's
                 </Link>
               </li>
               <li>
-                <Link href="/manage-preorders" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/manage-preorders" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Manage Pre-orders
                 </Link>
               </li>
               <li>
-                <Link href="/delivery" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/delivery" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Delivery info
                 </Link>
               </li>
               <li>
-                <Link href="/refund-policy" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/refund-policy" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Returns & Refunds
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/privacy" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/withdraw" className="text-on-surface-variant hover:text-primary transition-colors">
+                <Link href="/withdraw" className="text-[#F7F6F2]/70 hover:text-[#F7F6F2] transition-colors">
                   Withdraw from Contract
                 </Link>
               </li>
@@ -127,26 +127,26 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-3 flex flex-col gap-8">
             {/* SOCIAL row */}
             <div className="flex flex-col gap-4">
-              <h3 className="font-label-caps text-label-caps text-primary tracking-wider font-bold">
+              <h3 className="font-label-caps text-label-caps text-[#F7F6F2] tracking-wider font-bold">
                 SOCIAL
               </h3>
-              <div className="flex items-center gap-3 text-on-surface-variant">
-                <a href="https://instagram.com" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Instagram">{iconInstagram}</a>
-                <a href="https://tiktok.com" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer" aria-label="TikTok">{iconTikTok}</a>
-                <a href="https://facebook.com" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{iconFacebook}</a>
-                <a href="https://youtube.com" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer" aria-label="YouTube">{iconYouTube}</a>
-                <a href="https://threads.net" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Threads">{iconThreads}</a>
-                <a href="https://twitch.tv" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Twitch">{iconTwitch}</a>
+              <div className="flex items-center gap-3 text-[#F7F6F2]/70">
+                <a href="https://instagram.com" className="hover:text-[#F7F6F2] transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Instagram">{iconInstagram}</a>
+                <a href="https://tiktok.com" className="hover:text-[#F7F6F2] transition-colors" target="_blank" rel="noopener noreferrer" aria-label="TikTok">{iconTikTok}</a>
+                <a href="https://facebook.com" className="hover:text-[#F7F6F2] transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{iconFacebook}</a>
+                <a href="https://youtube.com" className="hover:text-[#F7F6F2] transition-colors" target="_blank" rel="noopener noreferrer" aria-label="YouTube">{iconYouTube}</a>
+                <a href="https://threads.net" className="hover:text-[#F7F6F2] transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Threads">{iconThreads}</a>
+                <a href="https://twitch.tv" className="hover:text-[#F7F6F2] transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Twitch">{iconTwitch}</a>
               </div>
             </div>
           </div>
 
           {/* Column 4: SIGN UP NOW */}
           <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="font-label-caps text-label-caps text-primary tracking-wider font-bold">
+            <h3 className="font-label-caps text-label-caps text-[#F7F6F2] tracking-wider font-bold">
               SIGN UP NOW
             </h3>
-            <p className="font-body-md text-body-md text-on-surface-variant">
+            <p className="font-body-md text-body-md text-[#F7F6F2]/70">
               Stay in the loop with exclusive offers and product previews.
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-row items-stretch w-full mt-2">
@@ -156,11 +156,11 @@ const Footer: React.FC = () => {
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-3 border border-outline-variant bg-surface-container-lowest text-primary font-body-md placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary rounded-none"
+                className="flex-1 px-4 py-3 border border-white/20 bg-white/5 text-[#F7F6F2] font-body-md placeholder:text-[#F7F6F2]/40 focus:outline-none focus:border-[#C28a5c] rounded-none"
               />
               <button
                 type="submit"
-                className="bg-primary text-on-primary font-label-caps text-label-caps px-6 hover:bg-primary-hover transition-colors rounded-none border border-primary border-l-0"
+                className="bg-[#C28a5c] text-[#F7F6F2] font-label-caps text-label-caps px-6 hover:bg-[#C28a5c]/85 transition-colors rounded-none border border-[#C28a5c] border-l-0"
               >
                 SIGN UP
               </button>
@@ -170,10 +170,10 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright Line */}
-        <div className="pt-8 border-t border-outline-variant/10">
-          <p className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest text-center md:text-left text-[11px]">
+        <div className="pt-8 border-t border-white/10">
+          <p className="font-label-caps text-label-caps text-[#F7F6F2]/50 uppercase tracking-widest text-center md:text-left text-[11px]">
             © {new Date().getFullYear()} JARVIS. ALL RIGHTS RESERVED.{" "}
-            <Link href="/business-enquiries" className="underline font-bold text-primary">
+            <Link href="/business-enquiries" className="underline font-bold text-[#F7F6F2] hover:text-[#C28a5c] transition-colors">
               BUSINESS ENQUIRIES
             </Link>
           </p>

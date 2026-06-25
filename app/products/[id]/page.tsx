@@ -41,6 +41,7 @@ export default function ProductDetailPage({ params }: PageProps) {
 
   const [selectedSize, setSelectedSize] = useState(getFirstAvailableSize(colorOption?.values[0] || ""));
   const [quantity, setQuantity] = useState(1);
+  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
   // Get active variant
   const activeVariant = product.variants.find(
@@ -167,15 +168,54 @@ export default function ProductDetailPage({ params }: PageProps) {
         
         {/* Product Gallery (Left) */}
         <div className="lg:col-span-7 flex flex-col md:flex-row gap-4 h-[614px] lg:h-[870px] lg:sticky lg:top-[120px]">
+          {/* Desktop Vertical Photo Indexing (Next to thumbnails on the left) */}
+          {productImages.length > 1 && (
+            <div className="hidden md:flex flex-col gap-4 items-center justify-center py-5 px-3 rounded-full select-none h-fit my-auto"
+              style={{
+                backdropFilter: "blur(20px)",
+                background: "rgba(15, 27, 45, 0.45)",
+                border: "1px solid rgba(255, 255, 255, 0.12)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)"
+              }}
+            >
+              {productImages.map((_, idx) => {
+                const isActive = activeImageIndex === idx;
+                const numStr = (idx + 1).toString().padStart(2, '0');
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`font-mono transition-all duration-300 ${
+                      isActive
+                        ? "text-[#F7F6F2] text-sm font-bold scale-110"
+                        : "text-[#F7F6F2]/50 text-[10px] hover:text-[#F7F6F2]"
+                    }`}
+                  >
+                    {numStr}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           {/* Desktop Thumbnails */}
           <div className="hidden md:flex flex-col gap-4 overflow-y-auto hide-scrollbar w-24 flex-shrink-0">
             {productImages.map((img, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveImageIndex(idx)}
-                className={`w-full aspect-[3/4] bg-surface-container border relative overflow-hidden transition-all duration-300 ${
-                  activeImageIndex === idx ? "border-primary opacity-100" : "border-transparent opacity-60 hover:opacity-100"
+                className={`w-full aspect-[3/4] relative overflow-hidden transition-all duration-300 rounded-2xl border ${
+                  activeImageIndex === idx ? "opacity-100" : "border-white/20 opacity-70 hover:opacity-100 bg-white/5 backdrop-blur-sm"
                 }`}
+                style={
+                  activeImageIndex === idx
+                    ? {
+                        borderColor: buttonColor,
+                        backgroundColor: `${buttonColor}12`,
+                        boxShadow: `0 4px 12px ${buttonColor}40`
+                      }
+                    : {}
+                }
               >
                 <Image
                   src={img}
@@ -189,7 +229,7 @@ export default function ProductDetailPage({ params }: PageProps) {
           </div>
 
           {/* Main Large Image */}
-          <div className="w-full h-full bg-surface-container relative overflow-hidden flex-1">
+          <div className="w-full h-full bg-surface-container relative overflow-hidden flex-1 rounded-[24px] border border-outline-variant/10 shadow-sm">
             {productImages[activeImageIndex] ? (
               <Image
                 src={productImages[activeImageIndex]}
@@ -205,19 +245,33 @@ export default function ProductDetailPage({ params }: PageProps) {
               </div>
             )}
             
-            {/* Mobile Pagination Dots */}
+            {/* Mobile Vertical Photo Indexing Overlay */}
             {productImages.length > 1 && (
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 md:hidden">
-                {productImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImageIndex(idx)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      activeImageIndex === idx ? "bg-primary" : "bg-primary/30"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20 items-center justify-center py-4 px-3 rounded-full select-none md:hidden"
+                style={{
+                  backdropFilter: "blur(20px)",
+                  background: "rgba(15, 27, 45, 0.45)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)"
+                }}
+              >
+                {productImages.map((_, idx) => {
+                  const isActive = activeImageIndex === idx;
+                  const numStr = (idx + 1).toString().padStart(2, '0');
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`font-mono transition-all duration-300 ${
+                        isActive
+                          ? "text-[#F7F6F2] text-sm font-bold scale-110"
+                          : "text-[#F7F6F2]/50 text-[10px] hover:text-[#F7F6F2]"
+                      }`}
+                    >
+                      {numStr}
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -229,7 +283,7 @@ export default function ProductDetailPage({ params }: PageProps) {
           {/* Header Block */}
           <div className="flex flex-col gap-stack-sm">
             <div className="flex items-center gap-2 border-b border-outline-variant/20 pb-2 w-max">
-              <div className="w-2 h-2 rounded-full bg-tertiary-fixed-dim" />
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: buttonColor }} />
               <span className="font-label-caps text-label-caps text-on-surface-variant uppercase">
                 {product.watchCount || 24} People are watching this right now
               </span>
@@ -252,14 +306,14 @@ export default function ProductDetailPage({ params }: PageProps) {
 
           {/* Shipping Estimate Card */}
           <div className="flex flex-col gap-2 p-4 bg-surface-container-low border border-outline-variant/10">
-            <div className="flex items-center gap-2 text-on-error-container">
+            <div className="flex items-center gap-2" style={{ color: buttonColor }}>
               <span className="material-symbols-outlined">local_shipping</span>
               <span className="font-body-md text-body-md font-bold">
                 {product.deliveryEstimate || "Estimated delivery : Jun 27 - Jun 29"}
               </span>
             </div>
             <div className="flex items-center gap-2 text-on-surface-variant">
-              <div className="w-3 h-3 rounded-full bg-green-400 border-2 border-surface" />
+              <div className="w-3 h-3 rounded-full border-2 border-surface" style={{ backgroundColor: buttonColor }} />
               <span className="font-label-sm text-label-sm uppercase">
                 {product.preorderText || "Preorders available | Ships by Jul 2"}
               </span>
@@ -330,7 +384,10 @@ export default function ProductDetailPage({ params }: PageProps) {
               <div className="flex flex-col gap-stack-md pt-2">
                 <div className="flex justify-between items-end pb-1 border-b border-outline-variant/10">
                   <span className="font-label-caps text-label-caps text-primary tracking-wider">Size</span>
-                  <button className="font-label-sm text-label-sm text-on-surface-variant underline">
+                  <button
+                    onClick={() => setIsSizeGuideOpen(true)}
+                    className="font-label-sm text-label-sm text-on-surface-variant underline cursor-pointer hover:text-primary transition-colors"
+                  >
                     Size Guide
                   </button>
                 </div>
@@ -430,7 +487,7 @@ export default function ProductDetailPage({ params }: PageProps) {
 
           {/* Collapsible Accordions */}
           <div className="flex flex-col border-b border-outline-variant/20">
-            <Accordion title="Details" iconName="checkroom" defaultOpen={true}>
+            <Accordion title="Details" iconName="checkroom" defaultOpen={true} iconColor={buttonColor}>
               <p>{product.description}</p>
               <ul className="list-disc pl-5 mt-2 space-y-1 font-label-sm text-label-sm">
                 <li>100% Premium Egyptian Cotton</li>
@@ -440,21 +497,68 @@ export default function ProductDetailPage({ params }: PageProps) {
               </ul>
             </Accordion>
 
-            <Accordion title="Delivery" iconName="local_shipping">
+            <Accordion title="Delivery" iconName="local_shipping" iconColor={buttonColor}>
               <p>Standard delivery within 3-5 business days. Express shipping available at checkout.</p>
             </Accordion>
 
-            <Accordion title="Return & Exchange Policy" iconName="keyboard_return">
+            <Accordion title="Return & Exchange Policy" iconName="keyboard_return" iconColor={buttonColor}>
               <p>We accept returns within 14 days of delivery. Items must be unworn with original tags attached.</p>
             </Accordion>
 
-            <Accordion title="Washing Instructions" iconName="laundry">
+            <Accordion title="Washing Instructions" iconName="laundry" iconColor={buttonColor}>
               <p>Machine wash cold with like colors. Do not bleach. Tumble dry low or hang dry to maintain structural integrity.</p>
             </Accordion>
           </div>
 
         </div>
       </div>
+
+      {/* Size Guide Modal */}
+      {isSizeGuideOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            onClick={() => setIsSizeGuideOpen(false)}
+            className="absolute inset-0 bg-[#0F1B2D]/60 backdrop-blur-md transition-opacity duration-300"
+          />
+
+          {/* Modal Content */}
+          <div
+            className="relative bg-[#F7F6F2] rounded-[32px] border border-white/20 shadow-2xl w-full max-w-2xl overflow-hidden p-6 md:p-8 flex flex-col gap-6 z-10 animate-fade-in-up"
+            style={{
+              boxShadow: "0 24px 64px rgba(15, 27, 45, 0.25)"
+            }}
+          >
+            {/* Header */}
+            <div className="flex justify-between items-center border-b border-outline-variant/10 pb-4">
+              <h3 className="font-label-caps text-md tracking-widest text-[#0F1B2D] font-bold uppercase">
+                SIZE GUIDE
+              </h3>
+              <button
+                onClick={() => setIsSizeGuideOpen(false)}
+                className="text-neutral-500 hover:text-black transition-colors cursor-pointer flex items-center justify-center w-8 h-8 rounded-full hover:bg-neutral-200"
+                aria-label="Close modal"
+              >
+                <span className="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+
+            {/* Image Wrapper */}
+            <div className="relative w-full aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-inner border border-outline-variant/10">
+              <Image
+                src="/assets/BLACK_JERSEY_b292c9fc-840f-4ff0-ad53-a5eeeb4f7c4f.webp"
+                alt="Jarvis Size Chart"
+                fill
+                className="object-contain p-4"
+              />
+            </div>
+            
+            <p className="font-label-caps text-[9px] text-neutral-400 tracking-wider uppercase text-center">
+              All measurements are in centimeters (cm). If you are between sizes, we recommend sizing up.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

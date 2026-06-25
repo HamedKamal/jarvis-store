@@ -43,7 +43,7 @@ export default function CheckoutPage() {
     item.product.variants.filter((v) => v.available).length <= 2
   );
 
-  const shipping = cartSubtotal >= 450 ? 0 : 60;
+  const shipping = cartSubtotal >= 1500 ? 0 : 60;
   const total = cartSubtotal + shipping;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
                     id="instapay"
                     label="InstaPay"
                     description="Egyptian mobile payment — instant confirmation"
-                    icon="account_balance_wallet"
+                    image="/assets/InstaPay_Logo.png"
                     selected={form.paymentMethod === "instapay"}
                     onChange={() => setForm((p) => ({ ...p, paymentMethod: "instapay" }))}
                   />
@@ -410,9 +410,10 @@ function InputField({
 }
 
 function PaymentOption({
-  id, label, description, icon, selected, onChange,
+  id, label, description, icon, selected, onChange, image,
 }: {
-  id: string; label: string; description: string; icon: string;
+  id: string; label: string; description: string; icon?: string;
+  image?: string;
   selected: boolean; onChange: () => void;
 }) {
   return (
@@ -425,7 +426,11 @@ function PaymentOption({
       }}
     >
       <input id={id} type="radio" name="paymentMethod" checked={selected} onChange={onChange} className="sr-only" />
-      <span className="material-symbols-outlined text-primary text-[22px]">{icon}</span>
+      {image ? (
+        <img src={image} alt={label} className="h-6 w-auto object-contain flex-shrink-0" />
+      ) : (
+        <span className="material-symbols-outlined text-primary text-[22px]">{icon}</span>
+      )}
       <div className="flex flex-col gap-0.5 flex-1">
         <span className="font-body-md text-body-md text-primary text-sm font-medium">{label}</span>
         <span className="font-label-caps text-label-caps text-on-surface-variant text-[10px] tracking-wider">{description}</span>

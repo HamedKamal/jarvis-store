@@ -11,7 +11,7 @@ export default function Home() {
       <section className="relative w-full h-[870px] min-h-[600px] flex items-end pb-section-gap">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh21Cj10njvYXFWhWetYS9PjCuJuP_a9GJBjt4j-aJzSw6X6aKDllEdEAv-vyauwfAL1DBRjV_Dl3dySnykXKwVeM6qLdDWTZylwroSneUuTtdD_l4oVJaQSm2AXTmjvIq045OgjSUpb56l4E8qS7pHqV44yhaTJt1nBQvpL2lqCN2bjYWQlqB00NZ_S-E5zH35N7C0BpV8QrD_RfB6kdBHXOkwMLLus2n28vnGj2ZJ8M8AENdSIs1OkNuI7D1sdqFGk6sywXdYo0"
+            src="/assets/home-page-cover-page.jpeg"
             alt="Brutalist streetwear clothing fashion models shot"
             fill
             priority

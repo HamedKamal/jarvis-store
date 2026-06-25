@@ -7,19 +7,19 @@ export default function DeliveryPage() {
     {
       name: "DOMESTIC EXPRESS (EGYPT)",
       time: "1 - 2 Business Days",
-      cost: "LE 50 (Free on orders over LE 450)",
+      cost: "LE 50 (Free on orders over LE 1500)",
       carrier: "Aramex / Jarvis Courier",
     },
     {
       name: "DHL GLOBAL EXPRESS (EUROPE & NORTH AMERICA)",
       time: "2 - 4 Business Days",
-      cost: "LE 400 / $25 (Free on orders over LE 450 / $450)",
+      cost: "LE 400 / $25 (Free on orders over LE 1500 / $150)",
       carrier: "DHL Express",
     },
     {
       name: "DHL GLOBAL EXPRESS (REST OF WORLD)",
       time: "3 - 5 Business Days",
-      cost: "LE 650 / $40 (Free on orders over LE 450 / $450)",
+      cost: "LE 650 / $40 (Free on orders over LE 1500 / $150)",
       carrier: "DHL Express",
     },
   ];
