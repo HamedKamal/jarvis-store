@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JARVIS - Architectural Streetwear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#f8b989",
+                        "on-primary-fixed-variant": "#3c475b",
+                        "primary-fixed-dim": "#bbc7df",
+                        "inverse-surface": "#303030",
+                        "on-surface-variant": "#44474c",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1c1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#535f74",
+                        "background": "#fcf9f8",
+                        "surface": "#fcf9f8",
+                        "tertiary": "#000000",
+                        "surface-variant": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "secondary": "#5e5f5c",
+                        "surface-container-high": "#eae7e7",
+                        "primary-fixed": "#d7e3fc",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#673c17",
+                        "surface-container": "#f0eded",
+                        "secondary-container": "#e0e0dc",
+                        "on-background": "#1b1c1c",
+                        "inverse-primary": "#bbc7df",
+                        "on-secondary": "#ffffff",
+                        "outline": "#75777d",
+                        "primary": "#000000",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-tertiary-fixed": "#2f1500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-container": "#101c2e",
+                        "surface-bright": "#fcf9f8",
+                        "secondary-fixed": "#e3e2df",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-fixed-variant": "#464744",
+                        "on-secondary-container": "#626360",
+                        "on-primary-container": "#79849b",
+                        "tertiary-container": "#2f1500",
+                        "on-tertiary-container": "#ae784d",
+                        "outline-variant": "#c5c6cd",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c7c7c3",
+                        "on-primary-fixed": "#101c2e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-md": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "label-caps": ["JetBrains Mono"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Chivo"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-xl": ["Chivo"]
+                    },
+                    "fontSize": {
+                        "display-md": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1440px] mx-auto">
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Navigation Links (Desktop) -->
+<ul class="hidden md:flex items-center gap-stack-lg font-label-caps text-label-caps">
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 uppercase" href="#">New Arrivals</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 uppercase" href="#">Collections</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 uppercase" href="#">Essentials</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 uppercase" href="#">Archive</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 uppercase" href="#">About</a>
+</li>
+</ul>
+<!-- Brand Logo -->
+<a class="font-display-md text-display-md font-bold tracking-tighter text-primary dark:text-primary-fixed-dim absolute left-1/2 -translate-x-1/2" href="#">
+                JARVIS
+            </a>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-stack-sm md:gap-stack-md text-primary dark:text-on-primary-fixed">
+<button aria-label="search" class="p-2 hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="person" class="p-2 hover:opacity-70 transition-opacity hidden md:block">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button aria-label="favorite" class="p-2 hover:opacity-70 transition-opacity hidden md:block">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button aria-label="shopping_bag" class="p-2 hover:opacity-70 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-[88px]">
+<!-- Hero Section -->
+<section class="relative w-full h-[870px] min-h-[600px] flex items-end pb-section-gap">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center" data-alt="Cinematic fashion shot of two male models in a brutalist concrete architectural setting. They are wearing minimalist, structured black streetwear outfits from JARVIS. The lighting is high-contrast, dramatic, and moody, emphasizing the structural integrity of the garments. The overall aesthetic is premium, silent luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh21Cj10njvYXFWhWetYS9PjCuJuP_a9GJBjt4j-aJzSw6X6aKDllEdEAv-vyauwfAL1DBRjV_Dl3dySnykXKwVeM6qLdDWTZylwroSneUuTtdD_l4oVJaQSm2AXTmjvIq045OgjSUpb56l4E8qS7pHqV44yhaTJt1nBQvpL2lqCN2bjYWQlqB00NZ_S-E5zH35N7C0BpV8QrD_RfB6kdBHXOkwMLLus2n28vnGj2ZJ8M8AENdSIs1OkNuI7D1sdqFGk6sywXdYo0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/20 to-transparent mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<div class="col-span-4 md:col-span-8 lg:col-span-6 flex flex-col gap-stack-md text-on-primary">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-primary/80">Fall/Winter 2024</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-on-primary">ARCHITECTURAL<br/>INTEGRITY.</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-md mt-stack-sm mb-stack-md">Redefining modern silhouettes through disciplined design and premium Egyptian textiles.</p>
+<div class="flex items-center gap-stack-md">
+<a class="inline-flex items-center justify-center bg-on-primary text-primary px-8 py-4 font-label-caps text-label-caps uppercase hover:bg-surface-variant transition-colors duration-300" href="#">Explore Collection</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Collections Section -->
+<section class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="flex justify-between items-end mb-stack-lg border-b border-outline-variant/20 pb-4">
+<h2 class="font-display-md text-display-md text-primary">CURATED UNIFORMS</h2>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter md:grid-rows-[400px_400px]">
+<!-- Large Feature (Left) -->
+<a class="group relative col-span-4 md:col-span-5 md:row-span-2 bg-surface-container-low overflow-hidden" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Two male models standing side by side against a clean off-white studio background. They are both wearing matching relaxed-fit black linen sets, consisting of a short-sleeve button-down shirt and straight-leg trousers. White sneakers. The lighting is bright and even, highlighting the texture of the linen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-AI1pxAQqtGQyziTcsvWPpZcHVUwghea9L5xpJx_ewobDUrvm5sHOJXgTXxzrTOJD64f8BLruHXPtSHGH91pz8mdQ7j8NETMzN5X5f1hysQ4dsHDZx9UBTI_r3Fy0K12gu9SxkDtYv351jfaK2PwX4Cm76lPu6sly1ATCcA-UO1Aylr9Z53_-Rp0Fycv29Iauh9GTVKFc2csmAYgJRlT3ShzCJo8ePhSe_xEZYNiBu4wpSnQQJEKu-T1JXbIU7BKJvoyeclbTIdc"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors duration-500"></div>
+<div class="absolute bottom-margin-mobile md:bottom-margin-desktop left-1/2 -translate-x-1/2">
+<div class="bg-primary-container text-on-primary-container px-6 py-3 font-label-caps text-label-caps uppercase tracking-widest backdrop-blur-md">Linen Sets</div>
+</div>
+</a>
+<!-- Top Right -->
+<a class="group relative col-span-4 md:col-span-7 bg-surface-container-low overflow-hidden h-[400px] md:h-auto" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up torso shot of two male models against a clean off-white studio background. One wears a perfectly fitted crisp white heavy-weight t-shirt, arms crossed. The other wears an identical fit t-shirt in solid black. The focus is on the structural drape and quality of the cotton basics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAY5SRHHUQl-nke-AYZmdLmKtkbh8fqwXl-DILfveWFXsO6Ym_HZpT3RPGAZ6XwldyTCL7rjtGtu8FY6USKBYniqD38kaWTCy5rRfi8Fod8anEm8CJo9yC8K4XR6lk64yzUeewqp_XqiVmnGoHPko8GHfmt44KIfAMRLd_cRuleWy7_gpjKGpYRZj3xzJQvHWnRUV9H-G0pHOLlpzJ0wsuYYKnirdoVer3UnNLo43re05Xfc-Yx566QsZz9JRvtgjmZJ680U1OUY4"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors duration-500"></div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+<div class="bg-primary-container text-on-primary-container px-6 py-3 font-label-caps text-label-caps uppercase tracking-widest backdrop-blur-md">Basics</div>
+</div>
+</a>
+<!-- Bottom Right Split 1 -->
+<a class="group relative col-span-2 md:col-span-4 bg-surface-container-low overflow-hidden h-[300px] md:h-auto" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A male model shot from the chest up against a clean off-white studio background. He is wearing a textured, heavyweight striped polo shirt with thick olive green and white horizontal stripes. Beside him, partially visible, another model wears a similar shirt with navy and white stripes. Casual, premium streetwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbVkpZYfljGhOorg79H1hqkvfFjFVcAy1JGfZd_S1CuhqdtiQ-Jp4eLAIkqqyOea1L9Jrt6-YO165KfUQKSfoFc767AaV79xJytSVShu-2ibt4OUg0kHNJ8zh_-UgmpHPMhRobXkznlNetBMo3OiLW1DiPdtL5MmdDKoXROHfRHNTNm0aEU0negNElPi0pGG9jZwUhb6dvM5Q3ULkTtKvA9u_CSqsRR78ydeTtATAokiGVcPWiq2qFMPcLg80r2Idprfrhbrjv5x0"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors duration-500"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+<div class="bg-primary-container text-on-primary-container px-4 py-2 font-label-caps text-label-caps uppercase tracking-widest backdrop-blur-md text-[10px] md:text-[12px]">Knitwear</div>
+</div>
+</a>
+<!-- Bottom Right Split 2 -->
+<a class="group relative col-span-2 md:col-span-3 bg-surface-container-low overflow-hidden h-[300px] md:h-auto" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A male model sitting on a simple wooden stool against a clean off-white studio background. He is wearing a light blue textured short-sleeve button-down shirt over a white ribbed tank top, paired with relaxed fit faded denim jeans. He looks relaxed and confident." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATeTa3thyR2kRHI6ecMZQKzwqdi67oq2EF6PFAHahgnCFliPFnbtk1f5oo0kVrqE-8kRIbAizmEyPh8EomT3l2ytvPu6LnTlLitdupiu8DpKeNvrqAQi2CblNQUSq6O3oROq80OpaHf_p_Y_9N2YB_0mQkfMMomxsns36MnAwR6WkEda9KYzQXMq4AyTMT_YL1ssQ_GvOJq5y6j6Zwm4iW0txoARzL5vY-Ui5YWRxr0lEY_KpeOHzumk0MNHb75DJwUzHkZhXWkrE"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors duration-500"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+<div class="bg-primary-container text-on-primary-container px-4 py-2 font-label-caps text-label-caps uppercase tracking-widest backdrop-blur-md text-[10px] md:text-[12px]">Shirts</div>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface-dim border-t border-outline-variant/20 pt-section-gap pb-8">
+<div class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-4 md:grid-cols-12 gap-gutter mb-section-gap">
+<!-- Brand Column -->
+<div class="col-span-4 md:col-span-4 flex flex-col gap-stack-md">
+<a class="font-display-md text-display-md font-bold text-primary dark:text-primary-fixed-dim tracking-tighter" href="#">JARVIS</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                        Minimalist architectural streetwear crafted with uncompromising quality. Designed for the discerning individual.
+                    </p>
+</div>
+<!-- Links Column -->
+<div class="col-span-4 md:col-span-8 flex flex-col md:flex-row justify-end gap-stack-lg md:gap-margin-desktop mt-8 md:mt-0">
+<ul class="flex flex-col gap-stack-sm font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Contact Us</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Wholesale</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright -->
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest text-center md:text-left">
+                    © 2024 JARVIS. ARCHITECTURAL INTEGRITY IN EVERY STITCH.
+                </p>
+<div class="flex items-center gap-4 mt-4 md:mt-0 text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_distance</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll behavior for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('py-6', 'py-4');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('py-4', 'py-6');
+            }
+        });
+    </script>
+</body></html>

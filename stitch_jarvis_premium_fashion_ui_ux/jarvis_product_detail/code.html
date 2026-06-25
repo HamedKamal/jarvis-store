@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JARVIS - GRAY CAMO 09 JRSY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#f8b989",
+                        "on-primary-fixed-variant": "#3c475b",
+                        "primary-fixed-dim": "#bbc7df",
+                        "inverse-surface": "#303030",
+                        "on-surface-variant": "#44474c",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1c1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#535f74",
+                        "background": "#fcf9f8",
+                        "surface": "#fcf9f8",
+                        "tertiary": "#000000",
+                        "surface-variant": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "secondary": "#5e5f5c",
+                        "surface-container-high": "#eae7e7",
+                        "primary-fixed": "#d7e3fc",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#673c17",
+                        "surface-container": "#f0eded",
+                        "secondary-container": "#e0e0dc",
+                        "on-background": "#1b1c1c",
+                        "inverse-primary": "#bbc7df",
+                        "on-secondary": "#ffffff",
+                        "outline": "#75777d",
+                        "primary": "#000000",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-tertiary-fixed": "#2f1500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-container": "#101c2e",
+                        "surface-bright": "#fcf9f8",
+                        "secondary-fixed": "#e3e2df",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-fixed-variant": "#464744",
+                        "on-secondary-container": "#626360",
+                        "on-primary-container": "#79849b",
+                        "tertiary-container": "#2f1500",
+                        "on-tertiary-container": "#ae784d",
+                        "outline-variant": "#c5c6cd",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c7c7c3",
+                        "on-primary-fixed": "#101c2e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-md": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "label-caps": ["JetBrains Mono"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Chivo"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-xl": ["Chivo"]
+                    },
+                    "fontSize": {
+                        "display-md": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.surface'); color: theme('colors.on-surface'); }
+        .out-of-stock { position: relative; overflow: hidden; color: theme('colors.outline-variant'); border-color: theme('colors.outline-variant'); }
+        .out-of-stock::after { content: ''; position: absolute; top: 50%; left: -10%; width: 120%; height: 1px; background-color: theme('colors.outline-variant'); transform: rotate(-30deg); }
+        
+        /* Hide scrollbar for gallery but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1440px] mx-auto">
+<!-- Mobile Menu Icon (hidden on desktop) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Navigation Links (hidden on mobile) -->
+<ul class="hidden md:flex gap-gutter items-center">
+<li><a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">New Arrivals</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Essentials</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Archive</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a></li>
+</ul>
+<!-- Brand Logo -->
+<a class="font-display-md text-display-md font-bold tracking-tighter text-primary" href="#">JARVIS</a>
+<!-- Trailing Icons -->
+<div class="flex gap-4 items-center">
+<button class="text-primary hover:text-primary/70 transition-opacity"><span class="material-symbols-outlined">search</span></button>
+<button class="hidden md:block text-primary hover:text-primary/70 transition-opacity"><span class="material-symbols-outlined">person</span></button>
+<button class="hidden md:block text-primary hover:text-primary/70 transition-opacity"><span class="material-symbols-outlined">favorite</span></button>
+<button class="text-primary hover:text-primary/70 transition-opacity"><span class="material-symbols-outlined">shopping_bag</span></button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-[100px] md:pt-[120px] pb-section-gap max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-gutter">
+<!-- Product Gallery (Left) -->
+<div class="lg:col-span-7 flex flex-col md:flex-row gap-4 h-[614px] lg:h-[870px] sticky top-[120px]">
+<!-- Desktop Thumbnails -->
+<div class="hidden md:flex flex-col gap-4 overflow-y-auto hide-scrollbar w-24 flex-shrink-0 px-margin-desktop lg:px-0 lg:pl-margin-desktop">
+<button class="w-full aspect-[3/4] bg-surface-container border border-primary"><img class="w-full h-full object-cover" data-alt="A macro detail shot of the gray camo jersey fabric, highlighting the premium breathable texture, minimalist lighting, high contrast, streetwear aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAmPckOyrDb9PC_qoYWeT4s-YmvoYPP1RB1lSgY1-IzABsBHrrV3Q92SnU_m8UDArIgnXe2GsE0ebPfxTAnMppDLhle5pKMb3MI75_S87Yxsc5QHtXUTeT_HRb_U1Tf_G6WvQaQ5fZs7Vl1qNrfHX8qElewCBkleLjkNjcWPGA4XSHo3xU7MfWxNaOQOiMOfPBQgKFsbNp9NSBEP4eOZRUBvzF21ujk0sZ2tz-vEvxb9MCTWkvW9Q6Njw_x3HY6wnqD6hpKidvhXk"/></button>
+<button class="w-full aspect-[3/4] bg-surface-container opacity-60 hover:opacity-100 transition-opacity"><img class="w-full h-full object-cover" data-alt="A full body shot of a model wearing the gray camo jersey, standing in a raw concrete architectural space, harsh natural light, editorial fashion photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqj7216dYn6cfEcu0GvZwpuhsJBEEQg5IHaT7jA6BnVO41bRH-co_fEgudWUtLW9vpDbBe4TPLdHjh43kTh6kPbmPQHd_ipYT6n5Pdb9ML9p9GtAFVCMSSC9CTbRAZkzxRXkVUa_orLZF0faOz2uCDeLlwmuy27OVSSJmyYFkDS1SqOm73I5rMawX88gsmRbUCuS3HPz6G2NgtXLWv-n5R_apsF3TetGGXyPGB4KzDK_peusBOlKWlZvVUQDr7aL3o8ATSDH96DBs"/></button>
+<button class="w-full aspect-[3/4] bg-surface-container opacity-60 hover:opacity-100 transition-opacity"><img class="w-full h-full object-cover" data-alt="A close up shot of the back of the gray camo jersey, showing structural stitching details and a subtle minimalist logo, studio lighting, clean off-white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB2taG0a70HAmIjf6rS-q5XGAw0oDSEbZpB23ZLkzGauiPCYe48jkDf3C8MZoVz-hY2wRK3ZLQCm78KqnKG33qIvSPguBEp09mJcoh62bvqeo8jt7WolspPY0o_Rt_zROivWM3nOgRmrivlhpodTDtoAGm6Tg2e48iSMdMZBzW9DfOKAcEC4HU1mci71C8Py7agx_4iXxm27abR4QHihcPI2k7YfRwwF-zTCHL1K8MheolKbwvZ-a7tIr0BcitvzEnvFgBlvVwpBo"/></button>
+<button class="w-full aspect-[3/4] bg-surface-container opacity-60 hover:opacity-100 transition-opacity"><img class="w-full h-full object-cover" data-alt="A flat lay shot of the gray camo jersey neatly folded on a smooth stone surface, accompanied by minimalist dark sunglasses, soft overhead lighting, premium visual merchandising." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGCoH7C37XPxy3uGoPI5wHltVn8xEg1I76_90VrP3cxEwc7X9d0ZxWn9KyRMUlJNnAqAo2Mpp3N56Gwc_3JfOgQj-gYvMGzVpdP17pLTZK9xHXiyStu706ufxaZgFb8jeR_uXVy5CO_hm0tJCy8MYgNA4R9uPAMw_wOkZoZPV1Qby8DdRvINVpC9RX15y2mKzZg5ooufX2dAl48XaNftPnMMvEM3j2OVbo2QEWFpWgAhHFOAoCHKBjzqUR7RrMrYSOutmdg1ACVVc"/></button>
+</div>
+<!-- Main Image -->
+<div class="w-full h-full bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A striking front-facing shot of the gray camo jersey hanging on a minimalist metal rail against a stark off-white background. The lighting emphasizes the subtle texture and structure of the premium cotton fabric. High-end streetwear editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIjwUUCutXPUv-0uXx-yDn3oZopUQKF1Eh8_CfS9WeSQVdQhxKr6mXoMocNGtnC-ZA-MQ0FA-5OdJ8pOyZJZxWAxQNuPt4dRhDlNN2VKH3OWFb_GWq1jsKxOhod0HMM0Zwfk9MeHTTiaHTKDrSaPoP-ngt02yCe_qjCyiwdD5daz9BptMfcHEVB6wFoM_kuD7s53eWvn0A-pRnrM3Pmc-YCO7E8j_1KlpowoORvkBuW4tu6PLAA4yicAwYHfyZRVBxi7i6qBcnUpw"/>
+<!-- Mobile Pagination Dots -->
+<div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 md:hidden">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+</div>
+</div>
+</div>
+<!-- Product Info (Right) -->
+<div class="lg:col-span-5 px-margin-mobile lg:px-margin-desktop lg:pr-margin-desktop lg:pl-0 pt-8 lg:pt-0 flex flex-col gap-stack-lg">
+<!-- Header -->
+<div class="flex flex-col gap-stack-sm">
+<div class="flex items-center gap-2 border-b border-outline-variant/20 pb-2 w-max">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">39 People are watching this right now</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase mt-4">
+                        GRAY CAMO 09 JRSY
+                    </h1>
+<div class="font-display-md text-display-md text-primary mt-2">
+                        LE 899.00
+                    </div>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-caps text-label-caps text-primary border border-primary px-2 py-1">BEST SELLER</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">| Selling fast – only 7 left</span>
+</div>
+</div>
+<!-- Shipping Estimate -->
+<div class="flex flex-col gap-2 p-4 bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-center gap-2 text-on-error-container">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-md text-body-md font-bold">Estimated delivery : Jun 27 - Jun 29</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<div class="w-3 h-3 rounded-full bg-green-400 border-2 border-surface"></div>
+<span class="font-label-sm text-label-sm uppercase">Preorders available | Ships by Jul 2</span>
+</div>
+</div>
+<!-- Form Area -->
+<div class="flex flex-col gap-stack-lg">
+<!-- Size Selector -->
+<div class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-primary">Size</span>
+<button class="font-label-sm text-label-sm text-on-surface-variant underline">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-14 border border-primary font-label-caps text-label-caps text-primary bg-surface-container-high transition-colors">S</button>
+<button class="h-14 border border-outline-variant/50 font-label-caps text-label-caps text-on-surface-variant out-of-stock cursor-not-allowed" disabled="">M</button>
+<button class="h-14 border border-outline-variant/50 font-label-caps text-label-caps text-on-surface-variant out-of-stock cursor-not-allowed" disabled="">L</button>
+<button class="h-14 border border-outline-variant/50 font-label-caps text-label-caps text-on-surface-variant out-of-stock cursor-not-allowed" disabled="">XL</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4">
+<div class="flex gap-4">
+<!-- Quantity -->
+<div class="flex items-center border border-outline-variant/30 h-14 w-1/3 bg-surface-container-lowest">
+<button class="w-12 h-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">remove</span></button>
+<input class="w-full h-full text-center font-label-caps text-label-caps bg-transparent border-none focus:ring-0 p-0" readonly="" type="text" value="1"/>
+<button class="w-12 h-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">add</span></button>
+</div>
+<!-- Add to Cart -->
+<button class="flex-1 h-14 bg-surface-container-high border border-primary text-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span> Add to Cart
+                            </button>
+</div>
+<!-- Buy Now -->
+<button class="w-full h-14 bg-primary text-on-primary font-label-caps text-label-caps uppercase hover:bg-primary/90 transition-colors">
+                            Buy it now
+                        </button>
+</div>
+</div>
+<!-- Trust Strip -->
+<div class="flex justify-center gap-6 py-4 border-y border-outline-variant/20 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span class="font-label-caps text-label-caps text-[10px]">On-time delivery</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">shield</span>
+<span class="font-label-caps text-label-caps text-[10px]">Secure checkout</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">sync</span>
+<span class="font-label-caps text-label-caps text-[10px]">Easy exchange</span>
+</div>
+</div>
+<!-- Accordions -->
+<div class="flex flex-col border-b border-outline-variant/20">
+<!-- Details -->
+<details class="group border-t border-outline-variant/20 py-4" open="">
+<summary class="flex justify-between items-center font-label-caps text-label-caps text-primary uppercase cursor-pointer list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-error-container">checkroom</span>
+                                Details
+                            </div>
+<span class="material-symbols-outlined text-on-error-container group-open:hidden">add</span>
+<span class="material-symbols-outlined text-on-error-container hidden group-open:block">remove</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant">
+<p>Engineered for the modern urban environment. This jersey is constructed from premium Egyptian cotton, offering unparalleled breathability and structural integrity. The custom gray camo pattern is subtly integrated into the weave, maintaining a minimalist aesthetic.</p>
+<ul class="list-disc pl-5 mt-2 space-y-1 font-label-sm text-label-sm">
+<li>100% Premium Egyptian Cotton</li>
+<li>Relaxed architectural fit</li>
+<li>Reinforced stitching at stress points</li>
+<li>Made in Cairo</li>
+</ul>
+</div>
+</details>
+<!-- Delivery -->
+<details class="group border-t border-outline-variant/20 py-4">
+<summary class="flex justify-between items-center font-label-caps text-label-caps text-primary uppercase cursor-pointer list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-error-container">local_shipping</span>
+                                Delivery
+                            </div>
+<span class="material-symbols-outlined text-on-error-container group-open:hidden">add</span>
+<span class="material-symbols-outlined text-on-error-container hidden group-open:block">remove</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant">
+<p>Standard delivery within 3-5 business days. Express shipping available at checkout.</p>
+</div>
+</details>
+<!-- Returns -->
+<details class="group border-t border-outline-variant/20 py-4">
+<summary class="flex justify-between items-center font-label-caps text-label-caps text-primary uppercase cursor-pointer list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-error-container">keyboard_return</span>
+                                Return &amp; Exchange Policy
+                            </div>
+<span class="material-symbols-outlined text-on-error-container group-open:hidden">add</span>
+<span class="material-symbols-outlined text-on-error-container hidden group-open:block">remove</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant">
+<p>We accept returns within 14 days of delivery. Items must be unworn with original tags attached.</p>
+</div>
+</details>
+<!-- Washing -->
+<details class="group border-t border-outline-variant/20 py-4">
+<summary class="flex justify-between items-center font-label-caps text-label-caps text-primary uppercase cursor-pointer list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-error-container">laundry</span>
+                                Washing Instructions
+                            </div>
+<span class="material-symbols-outlined text-on-error-container group-open:hidden">add</span>
+<span class="material-symbols-outlined text-on-error-container hidden group-open:block">remove</span>
+</summary>
+<div class="pt-4 font-body-md text-body-md text-on-surface-variant">
+<p>Machine wash cold with like colors. Do not bleach. Tumble dry low or hang dry to maintain structural integrity.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface dark:bg-surface-dim border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop mx-auto max-w-[1440px]">
+<div class="md:col-span-12 mb-8">
+<a class="font-display-md text-display-md font-bold text-primary dark:text-primary-fixed-dim" href="#">JARVIS</a>
+</div>
+<div class="md:col-span-8 flex flex-wrap gap-x-8 gap-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary-container transition-all" href="#">Wholesale</a>
+</div>
+<div class="md:col-span-12 mt-12">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 JARVIS. ARCHITECTURAL INTEGRITY IN EVERY STITCH.</p>
+</div>
+</div>
+</footer>
+</body></html>

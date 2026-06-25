@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "subheading": "Fall/Winter 2024",
+        "heading": "ARCHITECTURAL | INTEGRITY.",
+        "text": "Redefining modern silhouettes through disciplined design and premium Egyptian textiles.",
+        "button_label": "Explore Collection"
+      }
+    },
+    "curated_uniforms": {
+      "type": "curated-uniforms",
+      "settings": {
+        "title": "CURATED UNIFORMS",
+        "link_label": "View All",
+        "slot1_title": "Linen Sets",
+        "slot2_title": "Basics",
+        "slot3_title": "Knitwear",
+        "slot4_title": "Shirts"
+      }
+    },
+    "brand_statement": {
+      "type": "brand-statement",
+      "settings": {
+        "label": "OUR PHILOSOPHY",
+        "heading": "ARCHITECTURAL INTEGRITY IN EVERY SILHOUETTE.",
+        "text": "Jarvis represents the intersection of premium Egyptian heritage and modern architectural streetwear. Every piece is crafted with uncompromising quality and structural discipline, designed for the discerning individual who values silent luxury."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "curated_uniforms",
+    "brand_statement"
+  ]
+}
